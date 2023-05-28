@@ -4,30 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>가위바위보</title>
     <script src="Rsp.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div>
-        <h1>가위바위보</h1>
+        <div class="Reset">
+            <h2 id="result_num">0 : 0</h2>
+            <button onclick="reset()" id="'reset" >reset</button>
+        </div>
+        <h1>Rock Sissors Paper</h1>
         <div id="modal">
             <div class="modal_content">
-                <h3>결과!!</h3>
                 <div id="result">결과 확인중</div>
                 <button onclick="closeModal()" id="close_modal">닫기</button>
             </div>
             <div class="modal_layer" onclick="closeModal()"></div>
         </div>
-        <div>
-            <h2 id="result_num">0 : 0</h2>
+        <div class="Question">
+            <img id="userResult" src="img/물음표.png" alt="물음표 이미지"/>
+            <img id="computerResult" src="img/물음표2.png" alt="물음표 이미지"/>
         </div>
-        <img id="userResult" src="img/물음표 이미지.jpg" alt="물음표 이미지"/>
-        <button onclick='rockClick()' ><img src="img/바위 이미지.jpg" alt="바위이미지" /></button>
-        <button onclick='sissorsClick()'><img src="img/가위 이미지.jpg" alt="가위이미지" /></button>
-        <button onclick='paperClick()'><img src="img/보 이미지.jpg" alt="보이미지" /></button>
-        <img id="computerResult" src="img/물음표 이미지.jpg" alt="물음표 이미지"/>
-        
+        <div class="Status">
+            <h3>YOU</h3>
+            <h3>COMPUTER</h3>
+        </div>
+        <div class="Chose">
+            <div onclick='rockClick()' ><img src="img/바위.png" class='Rock' alt="바위이미지" /></div>
+            <div onclick='sissorsClick()'><img src="img/가위.png" class='Sissors' alt="가위이미지" /></div>
+            <div onclick='paperClick()'><img src="img/보.png" class='Paper' alt="보이미지" /></div>
+        </div>       
     </div>
 </body>
 </html>
