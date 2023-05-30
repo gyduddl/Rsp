@@ -1,6 +1,8 @@
-let Person= ['가위','바위','보'];
-let Victory = ['이겼음','졌음','비겼음'];
-let Computer = Math.floor(Math.random()*3);
+
+const strArray = ['가위', '바위', '보'];
+const [result] = strArray.sort(() => 0.5 - Math.random());
+const Computer= [result].join();
+
 
 //모달창
 const closeModal=()=>{
@@ -39,6 +41,8 @@ const reset=()=>{
     let result_num = document.getElementById('result_num')
     personValue =0;
     computerValue=0;
+    localStorage.removeItem('computer');
+    localStorage.removeItem('person');
     result_num.innerHTML=`<h2 id="result_num">${personValue} : ${computerValue}</h2>`;
 }
 
@@ -52,13 +56,13 @@ const RockSissors = (rsp)=>{
         computerimg.src='img/바위.png';
     }else computerimg.src='img/보.png';
 
-    if(rsp==='가위'&&Computer===2||rsp==='바위'&&Computer===0
-    || rsp==='보'&&Computer===1){
-        win(0)
-    }else if(rsp==='가위'&&Computer===1||rsp==='바위'&&Computer===2
-    ||rsp==='보'&&Computer===0){
-        win(1)
-    }else win(2);
+    if(rsp==='가위'&&Computer==='보'||rsp==='바위'&&Computer==='가위'
+    || rsp==='보'&&Computer==='바위'){
+        win('승리') 
+    }else if(rsp==='가위'&&Computer==='바위'||rsp==='바위'&&Computer==='보'
+    ||rsp==='보'&&Computer==='가위'){
+        win('패배')
+    }else win('비김');
 
 
     function win(n){
@@ -67,21 +71,20 @@ const RockSissors = (rsp)=>{
         let result_num = document.getElementById('result_num')
 
 
-        if(Victory[n]==='졌음') {
+        if(n==='패배') {
             computerValue=computerValue+1;
             window.localStorage.setItem('computer', JSON.stringify(computerValue));
-        }else if(Victory[n]==='이겼음'){
+        }else if(n==='승리'){
             personValue=personValue+1;
             localStorage.setItem('person',JSON.stringify(personValue));
         }
-        //어떻게 localStorage에서 값을 어떻게 가져오는거야.
-        // let computerValue2= window.localStorage.getItem("computerValue");
-        // let personValue2=JSON.parse(localStorage.getItem("personValue"));
+        let computerValue2= window.localStorage.getItem('computer');
+        let personValue2=JSON.parse(localStorage.getItem('person'));
     
         setTimeout(()=>  {
         modal.style.display='block';
-        result.innerHTML = `<div id="result">${Victory[n]}</div>`;
-        result_num.innerHTML=`<h2 id="result_num">${personValue} : ${computerValue}</h2>`;
+        result.innerHTML = `<div id="result">${n}</div>`;
+        result_num.innerHTML=`<h2 id="result_num">${personValue2||0} : ${computerValue2||0}</h2>`;
     },700 )
     }
 }
