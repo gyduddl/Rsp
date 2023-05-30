@@ -1,7 +1,7 @@
 
-const strArray = ['가위', '바위', '보'];
-const [result] = strArray.sort(() => 0.5 - Math.random());
-const Computer= [result].join();
+let strArray = ['가위', '바위', '보'];
+let [result] = strArray.sort(() => 0.5 - Math.random());
+let Computer= [result].join();
 
 
 //모달창
@@ -16,18 +16,25 @@ const closeModal=()=>{
 
 //가위바위보
 const rockClick = async()=>{
+    [result] = strArray.sort(() => 0.5 - Math.random());
+    Computer= [result].join();
+    console.log(Computer)
         let aimg = document.getElementById("userResult");
         aimg.src='img/바위.png';
         RockSissors('바위');
 }
 
 const sissorsClick = ()=>{
+    [result] = strArray.sort(() => 0.5 - Math.random());
+    Computer= [result].join();
     let aimg = document.getElementById("userResult");
     aimg.src='img/가위.png';
     RockSissors('가위');
 }
 
 const paperClick = ()=>{
+    [result] = strArray.sort(() => 0.5 - Math.random());
+    Computer= [result].join();
     let aimg = document.getElementById("userResult");
     aimg.src='img/보.png';
    RockSissors('보');
