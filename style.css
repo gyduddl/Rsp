@@ -5,6 +5,7 @@ body {
     height: 100%;
   }
 
+
 #modal {
     position:relative;
     display: none;
@@ -33,6 +34,11 @@ body {
     text-align: center;
     background-color: #fff;
     border-radius: 3%;
+    @media screen and (max-width: 760px) {
+        top: 60%;
+        width:200px;
+        height: 150px;
+    }
 }
 
 #modal .modal_content >div {
@@ -46,11 +52,17 @@ body {
 #userResult {
     width: 300px;
     margin-right: 5%;
+    @media screen and (max-width: 760px) {
+        width:150px;
+    }
 
 }
 
 #computerResult {
     width: 300px;
+    @media screen and (max-width: 760px) {
+        width:150px;
+    }
 }
 
 .Question{
@@ -77,6 +89,9 @@ body {
     justify-content: center;
     background-color: rgb(241, 240, 240);
     padding: 3% 0;
+    @media screen and (max-width: 760px) {
+        padding: 3% 0 40% 0;
+    }
 }
 
 
@@ -101,7 +116,8 @@ body {
     justify-content: space-between;
     padding: 2% 10%;
     border-bottom: 1px solid black;
-}
+
+}   
 
 button{
     width: 90px;

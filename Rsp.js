@@ -50,9 +50,9 @@ const reset=()=>{
 
 const RockSissors = (rsp)=>{
     let computerimg = document.getElementById( "computerResult");
-    if(Computer===0){
+    if(Computer==='가위'){
         computerimg.src='img/가위.png';
-    }else if(Computer===1){
+    }else if(Computer==='바위'){
         computerimg.src='img/바위.png';
     }else computerimg.src='img/보.png';
 
