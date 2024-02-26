@@ -1,6 +1,6 @@
 
 let strArray = ['가위', '바위', '보'];
-let [result] = strArray.sort(() => 0.5 - Math.random());
+let [result] = strArray.sort(() => 0.5 - Math.random()); //배열을 무작위로 (재)배열하여 [0]의 인덱스를 result에 넣어줌
 let Computer= [result].join();
 
 
