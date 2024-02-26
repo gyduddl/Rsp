@@ -80,7 +80,7 @@ const RockSissors = (rsp)=>{
 
         if(n==='패배') {
             computerValue=computerValue+1;
-            window.localStorage.setItem('computer', JSON.stringify(computerValue));
+            window.localStorage.setItem('computer', JSON.stringify(computerValue));//로컬스토리에 저장하여 새로고침시 상태값유지하도록 설정
         }else if(n==='승리'){
             personValue=personValue+1;
             localStorage.setItem('person',JSON.stringify(personValue));
